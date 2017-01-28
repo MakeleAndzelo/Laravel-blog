@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['create', 'store', 'edit', 'update']);
+    }
+
     public function index()
     {
     	$posts = Post::orderBy('created_at', 'DESC')->get();
@@ -26,7 +32,7 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-    	$post = Post::create($request->all());
+    	$post = Auth::user()->posts()->create($request->all());
 
     	return redirect(route('posts.show', $post->id));
     }

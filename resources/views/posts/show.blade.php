@@ -7,12 +7,14 @@
 		<p>{{$post->body}}</p>
 		<footer>
 			<div class="row">
-				<div class="btn-group u-pull-right">
-					<a href="{{ action('PostsController@edit', $post->id)}} " class="button button-primary">Edit</a>
-					{{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'DELETE']) }}
-						{{Form::submit('Delete')}}
-					{{ Form::close() }}
-				</div>
+				@if (Auth::user())
+					<div class="btn-group u-pull-right">
+						<a href="{{ action('PostsController@edit', $post->id)}} " class="button button-primary">Edit</a>
+						{{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'DELETE']) }}
+							{{Form::submit('Delete')}}
+						{{ Form::close() }}
+					</div>
+				@endif
 			</div>
 		</footer>
 	</article>

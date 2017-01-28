@@ -17,3 +17,6 @@ Route::resource('posts', 'PostsController');
 
 
 Route::get('/about', 'PagesController@about');
+Auth::routes();
+
+Route::get('/home', 'PostsController@index');

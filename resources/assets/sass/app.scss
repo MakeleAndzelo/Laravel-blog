@@ -8,18 +8,30 @@ $text: #212121;
 * {
 	box-sizing: border-box;
 }
-body {
+
+img {
+	width: 100%;
 }
 
 .btn-group {
 	display: flex;
 	flex-direction: row;
+	form {
+		margin: 0;
+		input {
+			margin: 0;
+		}
+	}
+
 }
 
 #content {
 	margin-left: 0;
 	width: 80%;
 	float: right;
+	#about-me {
+		padding: 5rem;
+	}
 	.content-header {
 		background: aliceblue;
 		border-bottom: 1px solid $grey;

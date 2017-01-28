@@ -27,9 +27,14 @@
 		<section id="content">
 			<header class="content-header">
 				@yield('title')
-				<div class="btn-group">
-					<a href="{{ action("PostsController@create") }}" class="button u-pull-right">New post</a>
-				</div>
+				@if (Auth::user())
+					<div class="btn-group">
+						<a href="{{ action("PostsController@create") }}" class="button u-pull-right">New post</a>
+						{{ Form::open(['method' => 'POST', 'route' => 'logout']) }}
+							{{ Form::submit('Logout') }}
+						{{ Form::close() }}
+					</div>
+				@endif
 			</header>
 			@yield('content')
 		</section>
