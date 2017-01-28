@@ -43,7 +43,7 @@ class PostsController extends Controller
     	return redirect(route('posts.show', $post->id));
     }
 
-    public function destroy()
+    public function destroy(Post $post)
     {
     	$post->delete();
 

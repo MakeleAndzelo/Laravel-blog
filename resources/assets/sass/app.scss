@@ -1,2 +1,95 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+$blue: #3498db;
+$grey: #95a5a6;
+$text: #212121;
+
+* {
+	box-sizing: border-box;
+}
+body {
+}
+
+.btn-group {
+	display: flex;
+	flex-direction: row;
+}
+
+#content {
+	margin-left: 0;
+	width: 80%;
+	float: right;
+	.content-header {
+		background: aliceblue;
+		border-bottom: 1px solid $grey;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.5rem;
+		h3 {
+			margin-bottom: 0;
+			color: $text;
+		}
+		a {
+			margin-bottom: 0;
+		}
+	}
+
+	textarea {
+		min-height: 50rem;
+		max-height: 50rem;
+		max-width: 100%;
+	}
+
+	.post {
+		padding: 3rem;
+		a {
+			color: $text;
+			text-decoration: none;
+		}
+	}
+	.show-post {
+		small {
+			margin-bottom: 1.5rem;
+			display: block;
+		}
+	}
+
+	.post-form {
+		margin-top: 5rem;
+	}
+}
+
+#sidebar {
+	width: 20%;
+	position: absolute;
+	border-right: 1px solid #bdc3c7;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: aliceblue;
+	text-align: right;
+	padding-right: 5rem;
+	padding-top: 7rem;
+	nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.nav-title {
+			color: $blue;
+			margin-bottom: 1.6rem;
+		}
+
+		ul {
+			list-style: none;
+			color: $grey;
+			li {
+				a {
+					color: $grey;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

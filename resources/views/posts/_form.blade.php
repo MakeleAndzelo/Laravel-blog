@@ -6,4 +6,4 @@
 	{{ Form::label('body', 'Post:') }}
 	{{ Form::textarea('body', null, ['class' => 'u-full-width'])}}
 </div>
-{{ Form::submit("Add post") }}
+{{ Form::submit($button) }}
