@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Post;
 use App\Comment;
+
 class CommentsController extends Controller
 {
 	public function __construct()
@@ -15,6 +16,10 @@ class CommentsController extends Controller
 
     public function store(Request $request, Post $post)
     {
+        $this->validate($request, [
+            'body' => 'required'
+        ]);
+
     	$comment = new Comment;
 
     	$comment->body = $request->input('body');
