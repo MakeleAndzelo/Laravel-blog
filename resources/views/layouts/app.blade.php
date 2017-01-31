@@ -20,9 +20,10 @@
 				<ul>
 					<li><a href="http://twitter.com">Twitter</a></li>
 					<li><a href="http://facebook.com">Facebook</a></li>
-					<li><a href="http://">Email</a></li>
+					<li><a href="mailto:example@example.pl">Email</a></li>
 				</ul>
 			</nav>
+			<a href="/login" id="admin">Admin login</a>
 		</section>
 		<section id="content">
 			<header class="content-header">
@@ -36,7 +37,9 @@
 					</div>
 				@endif
 			</header>
-			@yield('content')
+			<div id="box">
+				@yield('content')
+			</div>
 		</section>
 	</div>
 </body>

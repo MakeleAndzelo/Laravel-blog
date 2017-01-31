@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PostsRequest;
 use App\Post;
 use Auth;
 
@@ -30,7 +30,7 @@ class PostsController extends Controller
     	return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(PostsRequest $request)
     {
     	$post = Auth::user()->posts()->create($request->all());
 
@@ -42,7 +42,7 @@ class PostsController extends Controller
     	return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(PostsRequest $request, Post $post)
     {
     	$post->update($request->all());
 
